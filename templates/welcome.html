@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block title %}Welcome{% endblock %}
+{% block head %}
+{{ super() }}
+    <script type="text/javascript">var x =1</script>
+{% endblock head %}
+
+{% block content %}
+{% if username %}
+<h6 class="usa-heading-alt">{{username}} - <a href="{{url_for('logout')}}">logout</a></h6>
+{% endif %}
+<h1>Welcome!</h1>
+
+<div class="usa-alert usa-alert-success">
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    <div class="usa-alert-body">
+      <h3 class="usa-alert-heading">Successful Login</h3>
+      {% for message in messages %}
+      <p class="usa-alert-text">{{message}}</p>
+      {% endfor %}
+    </div>
+    {% endif %}    
+    {% endwith %}
+</div>
+
+<p>Welcome, {{ username }}. Glad to have you. </p>
+<p>Click here to <a href="{{url_for('logout')}}">logout</a></p>
+
+{% endblock content %}
+{% block footer %}
+{% endblock footer %}

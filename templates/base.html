@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        {% block head %}
+        <title>{% block title %}{% endblock %} - ODE Flask Test App</title>
+        <link rel="stylesheet" href="{{ url_for('static',filename="css/uswds.min.css") }}">
+        {% endblock %}
+    </head>
+    <body>
+    <div class="usa-grid">
+        <div class="usa-grid-full">
+            <h1>ODE Flask Test App</h1>
+        </div>
+        <div id="content" class="usa-width-one-whole">{% block content %}{% endblock %}</div>
+        <footer class="usa-footer usa-footer-slim" role="contentinfo">
+    <div class="usa-grid usa-footer-return-to-top">
+      <a href="#">Return to top</a>
+    </div>
+    {% block footer %}
+    {% endblock footer %}
+    <div class="usa-footer-primary-section">
+      <div class="usa-grid-full">
+        <nav class="usa-footer-nav usa-width-two-thirds">
+          <ul class="usa-unstyled-list">
+            <li class="usa-width-one-fourth usa-footer-primary-content">
+              <a class="usa-footer-primary-link" href="#">Primary link 1</a>
+            </li>
+            <li class="usa-width-one-fourth usa-footer-primary-content">
+              <a class="usa-footer-primary-link" href="#">Primary link 2</a>
+            </li>
+            <li class="usa-width-one-fourth usa-footer-primary-content">
+              <a class="usa-footer-primary-link" href="#">Primary link 3</a>
+            </li>
+            <li class="usa-width-one-fourth usa-footer-primary-content">
+              <a class="usa-footer-primary-link" href="#">Primary link 4</a>
+            </li>
+          </ul>
+        </nav>
+        <div class="usa-width-one-third">
+          <div class="usa-footer-primary-content usa-footer-contact_info">
+            <p>(800) RI-GREAT</p>
+          </div>
+          <div class="usa-footer-primary-content usa-footer-contact_info">
+            <a href="mailto:info@ode.ri.gov">info@ode.ri.gov</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="usa-footer-secondary_section">
+      <div class="usa-grid">
+        <div class="usa-footer-logo">
+          <img class="usa-footer-slim-logo-img" src="{{ url_for('static',filename="img/ode_logo.png") }}" alt="Logo image">
+          <h3 class="usa-footer-slim-logo-heading">Office of Digital Excellence</h3>
+        </div>
+      </div>
+    </div>
+  </footer>        
+    
+    </div>
+    <script src="{{ url_for('static',filename="js/uswds.min.js")}}"></script>
+    </body>
+</html>
